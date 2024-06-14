@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff0000;
+            padding: 10px 20px;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 18px;
+        }
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .navbar .search-bar {
+            display: flex;
+            flex: 1;
+            margin: 0 20px;
+        }
+        .navbar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+        }
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .sidebar {
+            background-color: #fff;
+            width: 240px;
+            padding-top: 70px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 999;
+            font-size: 18px;
+        }
+        .sidebar a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar a:hover {
+            background-color: #f1f1f1;
+        }
+        .content {
+            margin-left: 240px;
+            padding-top: 70px;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+        }
+        .video-section {
+            flex: 2;
+            margin-right: 20px;
+        }
+        .description {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 18px;
+        }
+        .video-container {
+            max-width: 100%;
+            background-color: #000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .play-button {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .chat-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-window {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 18px;
+        }
+        .chat-input {
+            display: flex;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-size: 18px;
+        }
+        .chat-input button {
+            padding: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">YouTube</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Subscriptions</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Trending</a>
+        <a href="#">Subscriptions</a>
+        <a href="timetable.html">Time table</a>
+        <a href="qna.html">Questions</a>
+        <a href="#">Your Videos</a>
+        <a href="#">Watch Later</a>
+        <a href="#">Liked Videos</a>
+        <a href="#">Settings</a>
+        <a href="#">Account</a>
+        <a href="payment.html">Payment</a>
+    </div>
+    <div class="content">
+        <div class="video-section">
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="https://firebasestorage.googleapis.com/v0/b/trial-43275.appspot.com/o/videoplayback.mp4?alt=media&token=d49f30a5-2d52-43f3-abaa-0db29bfeb83c" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="controls">
+                    <button class="play-button" onclick="togglePlay()">Play/Pause</button>
+                </div>
+            </div>
+            <div class="description">
+                <h2>BMW Car</h2>
+                <p>This is a detailed description of the BMW car. The BMW car is known for its luxury, performance, and advanced technology. It features a sleek design, powerful engine options, and state-of-the-art safety features. Whether you're driving in the city or on the highway, the BMW offers a smooth and enjoyable ride.</p>
+            </div>
+        </div>
+        <div class="chat-section">
+            <div class="chat-window" id="chatWindow">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type a message">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('videoPlayer');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatInput = document.getElementById('chatInput');
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function sendMessage() {
+            const message = chatInput.value;
+            if (message.trim() !== '') {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = message;
+                chatWindow.appendChild(messageElement);
+                chatInput.value = '';
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

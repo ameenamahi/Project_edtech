@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 8 Science Q&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff0000;
+            padding: 10px 20px;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 18px;
+        }
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .navbar .search-bar {
+            display: flex;
+            flex: 1;
+            margin: 0 20px;
+        }
+        .navbar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+        }
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .sidebar {
+            background-color: #fff;
+            width: 240px;
+            padding-top: 70px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 999;
+            font-size: 18px;
+        }
+        .sidebar a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar a:hover {
+            background-color: #f1f1f1;
+        }
+        .content {
+            margin-top: 70px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .qna-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 1600px; /* 4 times wider */
+            width: 100%; /* Take full width of the container */
+        }
+        .qna-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .question h3 {
+            font-size: 18px;
+            margin-right: 10px;
+            flex: 1;
+        }
+        .question input[type="text"] {
+            width: 100%; /* Take full width */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            flex: 3; /* Adjust input size */
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">School Name</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Q&A</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Subjects</a>
+        <a href="#">Teachers</a>
+        <a href="#">Library</a>
+        <a href="#">Exams</a>
+    </div>
+    <div class="content">
+        <div class="qna-section">
+            <h2>Class 8 Science Q&A</h2>
+            
+            <div class="question">
+                <h3>Question 1: What is photosynthesis?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 2: Explain Newton's First Law of Motion.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 3: Define a concave mirror.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 4: What are conductors and insulators?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 5: Describe the structure of an atom.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 6: What is the function of the digestive system?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 7: Explain the water cycle.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 8: Describe the process of pollination.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 9: What is the greenhouse effect?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 10: Define refraction of light.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 11: Explain the process of respiration in plants.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 12: What is the role of chromosomes in heredity?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 13: Describe the nervous system.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 14: Explain the process of sedimentation and decantation.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 15: What are renewable and non-renewable resources?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 16: Define osmosis.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 17: Describe the process of metamorphosis.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 18: Explain the formation of clouds.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 19: What is the role of enzymes in digestion?</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <div class="question">
+                <h3>Question 20: Define friction.</h3>
+                <input type="text" placeholder="Enter your answer...">
+            </div>
+            
+            <button class="submit-btn">Submit Answers</button>
+        </div>
+    </div>
+</body>
+</html>
